@@ -1,5 +1,4 @@
-﻿using DevFreela.API.Models;
-using DevFreela.Application.Commands.CreateCommand;
+﻿using DevFreela.Application.Commands.CreateCommand;
 using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Commands.DeleteCommand;
 using DevFreela.Application.Commands.FinishProject;
@@ -10,7 +9,6 @@ using DevFreela.Application.Queries.GetAllProjects;
 using DevFreela.Application.Queries.GetProjectById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 
 namespace DevFreela.API.Controllers
 {
@@ -50,15 +48,6 @@ namespace DevFreela.API.Controllers
         
         public async Task<IActionResult> Post([FromBody] CreateProjectCommand command)
         {
-            if (!ModelState.IsValid)
-            {
-                var messages = ModelState
-                    .SelectMany(ms => ms.Value.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-                return BadRequest(messages);
-            }
-
             //var id = _projectService.Create(inputModel);
             var id = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
@@ -68,15 +57,6 @@ namespace DevFreela.API.Controllers
         
         public async Task<IActionResult> Put(int id, [FromBody] UpdateProjectCommand command)
         {
-            if (!ModelState.IsValid)
-            {
-                var messages = ModelState
-                    .SelectMany(ms => ms.Value.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-                return BadRequest(messages);
-            }
-
             await _mediator.Send(command);
 
             return NoContent();
@@ -96,17 +76,8 @@ namespace DevFreela.API.Controllers
         public async Task<IActionResult> PostComment(int id ,[FromBody] CreateCommentCommand command)
         {
             //onde fiz sozinho
-            if (!ModelState.IsValid)
-            {
-                var messages = ModelState
-                    .SelectMany(ms => ms.Value.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-                return BadRequest(messages);
-            }
 
             await _mediator.Send(command);
-
             return NoContent();
         }
 

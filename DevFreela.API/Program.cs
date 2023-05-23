@@ -12,12 +12,13 @@ using DevFreela.Coree.Repositories;
 using DevFreela.Infrastructure.Persistence.Repositories;
 using FluentValidation.AspNetCore;
 using DevFreela.Application.Validators;
+using DevFreela.API.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers()
+builder.Services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
 
 

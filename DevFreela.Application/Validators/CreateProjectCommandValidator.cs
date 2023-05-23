@@ -16,10 +16,10 @@ namespace DevFreela.Application.Validators
                 .NotEmpty()
                 .NotNull()
                 .MaximumLength(20)
-                .WithMessage("Titulo não pode ser vazio");
+                .WithMessage("Tamanho máximo de título é de 20 caracteres");
             RuleFor(p => p.Description)
                 .MaximumLength(250)
-                .WithMessage("Tamanho máximo de 250 caracteres");
+                .WithMessage("Tamanho máximo de descrição é de 250 caracteres");
         }
     }
 }
