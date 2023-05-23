@@ -1,4 +1,3 @@
-
 using DevFreela.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
@@ -11,12 +10,16 @@ using DevFreela.Application.Commands.StartProject;
 using DevFreela.Application.Commands.CreateUser;
 using DevFreela.Coree.Repositories;
 using DevFreela.Infrastructure.Persistence.Repositories;
+using FluentValidation.AspNetCore;
+using DevFreela.Application.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
+
 
 //adicionando os tipos do mediator para injeção de dependencia!!
 builder.Services.AddMediatR(typeof(CreateProjectCommand));
@@ -37,6 +40,7 @@ builder.Services.AddDbContext<DevFreelaDbContext>(p => p.UseSqlServer(connection
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
+
 
 var app = builder.Build();
 
