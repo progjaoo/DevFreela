@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Azure.Core;
-using Dapper;
+﻿using Dapper;
 using DevFreela.Coree.Entities;
 using DevFreela.Coree.Repositories;
 using Microsoft.Data.SqlClient;
