@@ -1,5 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
+using System.Runtime.Intrinsics.Arm;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using DevFreela.Coree.Services;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +20,7 @@ namespace DevFreela.Infrastructure.Auth
         {
             _configuration = configuration;
         }
+
         //GERANDO O TOKEN JWT
         public string GenerateJwtToken(string email, string role)
         {
@@ -49,6 +52,23 @@ namespace DevFreela.Infrastructure.Auth
             //token ja no formato string para retornar pro metodo GenerateJwtToken
             var stringToken = tokenHandler.WriteToken(token);
             return stringToken;
+        }
+        public string ComputeSha256Hash(string password)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                //Compute Hash - retorna array para string
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                //Converte byte array para strin
+                StringBuilder builder = new StringBuilder();
+
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }   
+                return builder.ToString();
+             }
         }
     }
 }
