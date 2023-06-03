@@ -17,21 +17,22 @@ namespace DevFreela.Application.Commands.LoginUser
 
         public async Task<LoginUserViewModel> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
-            //recebe a senha e utiliza o algoritmo e cria o hash
+            // Utilizar o mesmo algoritmo para criar o hash dessa senha
             var passwordHash = _authService.ComputeSha256Hash(request.Password);
-            
-            //busca no BD um user que tenha o email e senha buscada..
+
+            // Buscar no meu banco de dados um User que tenha meu e-mail e minha senha em formato hash
             var user = await _userRepository.GetUserByEmailByPasswordAsync(request.Email, passwordHash);
 
-            //se nao tiver, if com erro
-            if(user == null)
+            // Se nao existir, erro no login
+            if (user == null)
             {
                 return null;
             }
-            //se existe? gera token usando os dados do usuário.
+
+            // Se existir, gero o token usando os dados do usuário
             var token = _authService.GenerateJwtToken(user.Email, user.Role);
-            
-            return new LoginUserViewModel(user.Email, token);       
+
+            return new LoginUserViewModel(user.Email, token);
         }
     }
 }
