@@ -6,7 +6,7 @@
 ### O sistema contará com as seguintes funcionalidades 
 + Arquitetura Limpa (Camadas Core/Application/Infraestructure/API)
 + Entity Framework Core e Dapper para persistência de dados no SQL Server
-+ CQRS para as responsabilidades do Sistema
++ CQRS para separação das responsabilidades do Sistema
 + Repository Patterns (Padrão Repositório)
 + Validação de API (fluentValidation)
 + Autenticação e Autorização com JWT (onde está atualmente)
