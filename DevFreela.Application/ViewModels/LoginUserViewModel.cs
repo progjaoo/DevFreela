@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DevFreela.Application.ViewModels
+﻿namespace DevFreela.Application.ViewModels
 {
     public class LoginUserViewModel
     {
@@ -13,8 +7,8 @@ namespace DevFreela.Application.ViewModels
             Email = email;
             Token = token;
         }   
-        public string Email { get; set;} 
+        public string Email { get; private set;} 
 
-        public string Token { get; set;}
+        public string Token { get; private set;}
     }
 }

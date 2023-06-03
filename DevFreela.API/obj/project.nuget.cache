@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bCIIs3h/EyTszwCtaRQKQOIa9I4V1B+nj+NjxC+1ewVpjybLk3wzLoFpK+gd2Tw9fGavp/a9z8gwhazMdiDMQw==",
+  "dgSpecHash": "KmAJtAS7WVWr4Ms7ylwO5h0bfH7wDG5LPsawKJ1irLxvzxZ6MM8NtJciNOED4Mk9ULRXAst5qJzJiKXnvUgYzQ==",
   "success": true,
   "projectFilePath": "D:\\Método.NETDireto\\DevFreela\\DevFreela.API\\DevFreela.API.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\joaom\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
+    "C:\\Users\\joaom\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.16\\microsoft.aspnetcore.authentication.jwtbearer.6.0.16.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",

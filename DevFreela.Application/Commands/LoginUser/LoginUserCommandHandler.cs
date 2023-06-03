@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevFreela.Application.ViewModels;
+﻿using DevFreela.Application.ViewModels;
 using DevFreela.Coree.Repositories;
 using DevFreela.Coree.Services;
 using MediatR;
@@ -36,9 +31,7 @@ namespace DevFreela.Application.Commands.LoginUser
             //se existe? gera token usando os dados do usuário.
             var token = _authService.GenerateJwtToken(user.Email, user.Role);
             
-            return new LoginUserViewModel(user.Email, user.Role);
-
-        
+            return new LoginUserViewModel(user.Email, token);       
         }
     }
 }

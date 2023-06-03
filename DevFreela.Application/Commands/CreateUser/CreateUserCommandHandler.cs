@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevFreela.Coree.Entities;
-using DevFreela.Coree.Repositories;
+﻿using DevFreela.Coree.Entities;
 using DevFreela.Coree.Services;
 using DevFreela.Infrastructure.Persistence;
-using DevFreela.Infrastructure.Persistence.Repositories;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace DevFreela.Application.Commands.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
     {
-        private readonly IUserRepository _userRepository;
+        private readonly DevFreelaDbContext _dbcontext;
         private readonly IAuthService _authService;
-        public CreateUserCommandHandler(IUserRepository userRepository, IAuthService authService)
+        public CreateUserCommandHandler(DevFreelaDbContext dbcontext, IAuthService authService)
         {
-            _userRepository = userRepository;
+            _dbcontext = dbcontext;
             _authService = authService;
         }
 
@@ -30,7 +22,8 @@ namespace DevFreela.Application.Commands.CreateUser
 
             var user = new User(request.FullName, request.Email, request.BirthDate, passwordHash, request.Role);
 
-            await _userRepository.AddAsync(user);
+            await _dbcontext.Users.AddAsync(user);
+            await _dbcontext.SaveChangesAsync();
 
             return user.Id;
         }
