@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4t+iQCszJg3Nz7Ev4lqaIaRowt7hGRHWFpVt26owvVgl8SpYwaF1FA3bn9HoHWLc0d2Fgw5XbbDBMQy3rMU1Tg==",
+  "dgSpecHash": "ctAhBi6X1xKvjOvAFrwjT5wD2ASmsXc/OLkSp4mSlP3NpJ7t9dUzvF5wcjzrnLpajERjOibp7dyjfy6muCyfKA==",
   "success": true,
   "projectFilePath": "D:\\Método.NETDireto\\DevFreela\\DevFreel.UnitTests\\DevFreel.UnitTests.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
+    "C:\\Users\\joaom\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.5\\microsoft.entityframeworkcore.inmemory.7.0.5.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.5\\microsoft.entityframeworkcore.sqlserver.7.0.5.nupkg.sha512",
     "C:\\Users\\joaom\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevFreela.Application.Queries.GetAllProjects;
+﻿using DevFreela.Application.Queries.GetAllProjects;
 using DevFreela.Coree.Entities;
 using DevFreela.Coree.Repositories;
 using Moq;
@@ -23,6 +18,7 @@ namespace DevFreel.UnitTests.Application.Queries
                 new Project ("Teste 1", "Descricao teste 1", 1, 2, 10000),
                 new Project ("Teste 2", "Descricao teste 2", 1, 2, 20000),
                 new Project ("Teste 3", "Descricao teste 3", 1, 2, 30000)
+                
             };
 
             var projectRepositoryMock = new Mock<IProjectRepository>(); //dps cria o mock do repositorio

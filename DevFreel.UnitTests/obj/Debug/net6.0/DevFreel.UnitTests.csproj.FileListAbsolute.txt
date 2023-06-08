@@ -160,3 +160,4 @@ D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\obj\Debug\net6.0\DevFreel.Unit
 D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\obj\Debug\net6.0\ref\DevFreel.UnitTests.dll
 D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\Castle.Core.dll
 D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\Moq.dll
+D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
