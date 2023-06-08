@@ -17,7 +17,7 @@ namespace DevFreel.UnitTests.Application.Commands
 
             var options = new DbContextOptionsBuilder<DevFreelaDbContext>()
                             .UseInMemoryDatabase(databaseName: "TestDatabase")
-                            .Options;
+                            .Options; //criei no Infraestructure.Persistence
 
             var dbContext = new Mock<TestDbContext>(options);
             var authService = new Mock<IAuthService>();
