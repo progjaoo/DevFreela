@@ -9,6 +9,15 @@
 + CQRS para separação das responsabilidades do Sistema
 + Repository Patterns (Padrão Repositório)
 + Validação de API (fluentValidation)
-+ Autenticação e Autorização com JWT (onde está atualmente)
++ Autenticação e Autorização com JWT 
++ Testes Unitários
++ Mensageria com RabbitMQ (em implementação)
++ Payment (em breve)
 Breve novidades...
+
+## Funcionalidades:
++ Cadastro, Listagem, Detalhes, Atualização e Remoção de Projetos
++ Início e conclusão de Projetos
++ Cadastro de comentário em Projeto
++ Cadastro, Detalhes e Login de Usuário
 
