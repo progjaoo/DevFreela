@@ -13,7 +13,7 @@
 + Testes Unitários
 + Mensageria com RabbitMQ (em implementação)
 + Payment (em breve)
-Breve novidades...
+<p>Breve novidades...</p>
 
 ## Funcionalidades:
 + Cadastro, Listagem, Detalhes, Atualização e Remoção de Projetos
