@@ -10,9 +10,6 @@ using DevFreela.Application.Commands.StartProject;
 using DevFreela.Application.Commands.CreateUser;
 using DevFreela.Coree.Repositories;
 using DevFreela.Infrastructure.Persistence.Repositories;
-using FluentValidation.AspNetCore;
-using DevFreela.Application.Validators;
-using DevFreela.API.Filters;
 using DevFreela.Coree.Services;
 using DevFreela.Infrastructure.Auth;
 using DevFreela.Application.Commands.LoginUser;
@@ -25,8 +22,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
-    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
+//builder.Services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
+//    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
 
 
 //adicionando os tipos do mediator para injeção de dependencia!!

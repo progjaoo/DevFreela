@@ -37,7 +37,8 @@ namespace DevFreel.UnitTests.Application.Queries
             /* Retornar a propriedade da classe GetAllProjectQueryHandler que é o list de projectviewmodel*/
             var projectViewModelList = await getAllProjectsQueryHanlder.Handle(getAllProjectsQuery, new CancellationToken());   
 
-            //Asserts
+            //ASSERTS
+
             Assert.NotNull(projectViewModelList); //ver se ta nulo
             Assert.NotEmpty(projectViewModelList); //ver se não ta vazio
             Assert.Equal(projects.Count, projectViewModelList.Count); //ver o tamanho da lista se é mesmo que ta no banco fake
