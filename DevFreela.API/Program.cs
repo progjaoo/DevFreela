@@ -1,18 +1,9 @@
 using DevFreela.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using MediatR;
-using DevFreela.Application.Commands.CreateProject;
-using DevFreela.Application.Commands.CreateCommand;
-using DevFreela.Application.Commands.DeleteCommand;
-using DevFreela.Application.Commands.UpdateProject;
-using DevFreela.Application.Commands.FinishProject;
-using DevFreela.Application.Commands.StartProject;
-using DevFreela.Application.Commands.CreateUser;
 using DevFreela.Coree.Repositories;
 using DevFreela.Infrastructure.Persistence.Repositories;
 using DevFreela.Coree.Services;
 using DevFreela.Infrastructure.Auth;
-using DevFreela.Application.Commands.LoginUser;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -27,16 +18,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 //adicionando os tipos do mediator para injeção de dependencia!!
-builder.Services.AddMediatR(typeof(CreateProjectCommand));
-builder.Services.AddMediatR(typeof(CreateCommentCommand));
-builder.Services.AddMediatR(typeof(DeleteProjectCommand));
-builder.Services.AddMediatR(typeof(UpdateProjectCommand));
-builder.Services.AddMediatR(typeof(FinishProjectCommand));
-builder.Services.AddMediatR(typeof(StartProjectCommand));
-builder.Services.AddMediatR(typeof(CreateUserCommand));
-builder.Services.AddMediatR(typeof(LoginUserCommand));
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddAuthorization();
+builder.Services.AddControllers();
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -95,14 +81,12 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DevFreela.API v1"));
-}
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.UseHttpsRedirection();
-
 
 app.UseAuthentication();
 app.UseAuthorization();
