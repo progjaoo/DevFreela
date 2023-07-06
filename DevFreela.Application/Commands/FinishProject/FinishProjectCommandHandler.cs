@@ -1,34 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Azure.Core;
-using DevFreela.Coree.Repositories;
-using DevFreela.Infrastructure.Persistence;
+﻿using DevFreela.Coree.DTO;
+using DevFreela.Coree.InterfacesRepositorys;
+using DevFreela.Infrastructure.Payments;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace DevFreela.Application.Commands.FinishProject
 {
-    public class FinishProjectCommandHandler : IRequestHandler<FinishProjectCommand, Unit>
+    public class FinishProjectCommandHandler : IRequestHandler<FinishProjectCommand, bool>
     {
         private readonly IProjectRepository _projectRepository;
+        private readonly IPaymentService _paymentService;
 
-        public FinishProjectCommandHandler(IProjectRepository projectRepository)
+        public FinishProjectCommandHandler(IProjectRepository projectRepository, IPaymentService paymentService)
         {
             _projectRepository = projectRepository;
+            _paymentService = paymentService;
         }
 
-        public async Task<Unit> Handle(FinishProjectCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(FinishProjectCommand request, CancellationToken cancellationToken)
         {
             var project = await _projectRepository.GetByIdAsync(request.Id);
 
-            project.Finish();
+            var paymentInfoDto = new PaymentInfoDTO(request.Id, request.CreditCarNumber, request.Cvv, request.ExpiresAt, request.FullName, project.TotalCost);
 
-            await _projectRepository.SaveChangesAsync(project);
+            _paymentService.ProcessPayment(paymentInfoDto);
 
-            return Unit.Value;
+            project.SetPaymentPending();
+
+            await _projectRepository.SaveChangesAsync();
+
+            return true;
         }
     }
 }

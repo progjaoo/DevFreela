@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using DevFreela.Coree.Entities;
-using DevFreela.Coree.Repositories;
+using DevFreela.Coree.InterfacesRepositorys;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -59,7 +59,7 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
 
         }
 
-        public async Task SaveChangesAsync(Project project)
+        public async Task SaveChangesAsync()
         {
             await _dbcontext.SaveChangesAsync();
         }

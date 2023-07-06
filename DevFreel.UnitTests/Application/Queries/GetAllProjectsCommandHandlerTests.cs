@@ -1,6 +1,6 @@
 ﻿using DevFreela.Application.Queries.GetAllProjects;
 using DevFreela.Coree.Entities;
-using DevFreela.Coree.Repositories;
+using DevFreela.Coree.InterfacesRepositorys;
 using Moq;
 
 namespace DevFreel.UnitTests.Application.Queries

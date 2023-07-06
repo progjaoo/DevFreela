@@ -1,5 +1,5 @@
 ﻿using DevFreela.Application.ViewModels;
-using DevFreela.Coree.Repositories;
+using DevFreela.Coree.InterfacesRepositorys;
 using MediatR;
 
 namespace DevFreela.Application.Queries.GetAllProjects

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DevFreela.Coree.Repositories;
+using DevFreela.Coree.InterfacesRepositorys;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +25,7 @@ namespace DevFreela.Application.Commands.DeleteCommand
 
             project.Cancel();
 
-            await _projectRepository.SaveChangesAsync(project);
+            await _projectRepository.SaveChangesAsync();
 
             return Unit.Value;
         }

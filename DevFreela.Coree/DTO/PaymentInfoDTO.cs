@@ -8,11 +8,21 @@ namespace DevFreela.Coree.DTO
 {
     public class PaymentInfoDTO
     {
-        public int IdProject { get; set; }
-        public string CreditCardNumber { get; set; }
-        public string Cvv{ get; set; }
-        public string ExpireAt{ get; set; }
-        public string FullName{ get; set;}
-        public string Amount{ get; set;} 
+        public PaymentInfoDTO(int idProject, string creditCardNumber, string cvv, string expireAt, string fullName, decimal amount)
+        {
+            IdProject = idProject;
+            CreditCardNumber = creditCardNumber;
+            Cvv = cvv;
+            ExpireAt = expireAt;
+            FullName = fullName;
+            Amount = amount;
+        }
+
+        public int IdProject { get; private set; }
+        public string CreditCardNumber { get; private set; }
+        public string Cvv{ get; private set; }
+        public string ExpireAt{ get; private set; }
+        public string FullName{ get; private set;}
+        public decimal Amount{ get; private set;} 
     }
 }

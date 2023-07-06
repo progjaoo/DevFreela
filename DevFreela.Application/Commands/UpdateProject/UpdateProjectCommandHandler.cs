@@ -1,4 +1,4 @@
-﻿using DevFreela.Coree.Repositories;
+﻿using DevFreela.Coree.InterfacesRepositorys;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,7 +21,7 @@ namespace DevFreela.Application.Commands.UpdateProject
 
             project.Update(request.Title, request.Description, request.TotalCost);
 
-            await _projectRepository.SaveChangesAsync(project);
+            await _projectRepository.SaveChangesAsync();
 
             return Unit.Value;
         }

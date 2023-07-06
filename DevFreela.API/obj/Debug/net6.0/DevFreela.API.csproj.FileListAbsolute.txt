@@ -100,3 +100,5 @@ D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\FluentValidation.d
 D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
+D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll

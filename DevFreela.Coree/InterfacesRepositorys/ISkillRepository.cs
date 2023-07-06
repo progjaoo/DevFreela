@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DevFreela.Coree.DTO_s;
 
-namespace DevFreela.Coree.Repositories
+namespace DevFreela.Coree.InterfacesRepositorys
 {
     public interface ISkillRepository
     {
-        Task<List<SkillDTO>>GetAll(); 
+        Task<List<SkillDTO>> GetAll();
     }
 
 }

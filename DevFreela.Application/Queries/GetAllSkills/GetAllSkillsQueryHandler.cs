@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using DevFreela.Application.ViewModels;
 using DevFreela.Coree.DTO_s;
-using DevFreela.Coree.Repositories;
+using DevFreela.Coree.InterfacesRepositorys;
 using MediatR;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;

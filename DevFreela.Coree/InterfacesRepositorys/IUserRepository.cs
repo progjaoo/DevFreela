@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DevFreela.Coree.Entities;
 
-namespace DevFreela.Coree.Repositories
+namespace DevFreela.Coree.InterfacesRepositorys
 {
     public interface IUserRepository
     {
         Task<User> GetByIdAsync(int id);
-        Task<User>GetUserByEmailByPasswordAsync(string email, string passwordHash);
+        Task<User> GetUserByEmailByPasswordAsync(string email, string passwordHash);
     }
 }

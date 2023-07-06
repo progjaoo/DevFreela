@@ -1,6 +1,6 @@
 ﻿using DevFreela.Coree.Entities;
 
-namespace DevFreela.Coree.Repositories
+namespace DevFreela.Coree.InterfacesRepositorys
 {
     public interface IProjectRepository
     {
@@ -9,7 +9,7 @@ namespace DevFreela.Coree.Repositories
         Task<Project> GetDetailsByIdAsync(int id);
         Task AddASync(Project project);
         Task AddCommentAsync(ProjectComment projectcomment);
-        Task SaveChangesAsync(Project project);
+        Task SaveChangesAsync();
         Task StartAsync(Project project);
     }
 }

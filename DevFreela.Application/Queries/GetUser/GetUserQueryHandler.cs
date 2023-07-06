@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Azure.Core;
 using DevFreela.Application.ViewModels;
-using DevFreela.Coree.Repositories;
+using DevFreela.Coree.InterfacesRepositorys;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

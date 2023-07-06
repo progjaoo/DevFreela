@@ -1,5 +1,5 @@
 ﻿using DevFreela.Coree.Entities;
-using DevFreela.Coree.Repositories;
+using DevFreela.Coree.InterfacesRepositorys;
 using MediatR;
 
 namespace DevFreela.Application.Commands.CreateProject

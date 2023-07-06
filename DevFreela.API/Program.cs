@@ -1,6 +1,5 @@
 using DevFreela.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using DevFreela.Coree.Repositories;
 using DevFreela.Infrastructure.Persistence.Repositories;
 using DevFreela.Coree.Services;
 using DevFreela.Infrastructure.Auth;
@@ -8,6 +7,13 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using MediatR;
+using DevFreela.Application.Commands.CreateProject;
+using DevFreela.Application.Commands.CreateUser;
+using DevFreela.Infrastructure.Payments;
+using DevFreela.Coree.Interfaces;
+using DevFreela.Infrastructure.MessageBus;
+using DevFreela.Coree.InterfacesRepositorys;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +29,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
-
+builder.Services.AddHttpClient();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -72,11 +78,17 @@ builder.Services.AddSwaggerGen(c =>
 });
 var connection = builder.Configuration.GetConnectionString("DevFreelaCs");
 builder.Services.AddDbContext<DevFreelaDbContext>(p => p.UseSqlServer(connection));
+
 builder.Services.AddHttpClient();
+builder.Services.AddMediatR(typeof(CreateProjectCommand));
+builder.Services.AddMediatR(typeof(CreateUserCommand));
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<IMessageBusService, MessageBusService>();
+
 
 var app = builder.Build();
 
