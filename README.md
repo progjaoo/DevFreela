@@ -11,8 +11,8 @@
 + Validação de API (fluentValidation)
 + Autenticação e Autorização com JWT 
 + Testes Unitários
++ Payments
 + Mensageria com RabbitMQ (em implementação)
-+ Payment (em breve)
 <p>Breve novidades...</p>
 
 ## Funcionalidades:
