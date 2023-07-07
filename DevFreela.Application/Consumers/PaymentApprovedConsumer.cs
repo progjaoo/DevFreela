@@ -1,11 +1,15 @@
-﻿using System.Text;
-using System.Text.Json;
-using DevFreela.Coree.IntegrationEvents;
+﻿using DevFreela.Coree.IntegrationEvents;
 using DevFreela.Coree.InterfacesRepositorys;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace DevFreela.Application.Consumers
 {
@@ -16,9 +20,9 @@ namespace DevFreela.Application.Consumers
         private readonly IModel _channel;
         private readonly IServiceProvider _serviceProvider;
 
-        public PaymentApprovedConsumer(IServiceProvider serviceProvider)
+        public PaymentApprovedConsumer(IServiceProvider servicesProvider)
         {
-            _serviceProvider = serviceProvider;
+            _serviceProvider = servicesProvider;
 
             var factory = new ConnectionFactory
             {
@@ -56,15 +60,18 @@ namespace DevFreela.Application.Consumers
 
             return Task.CompletedTask;
         }
+
         public async Task FinishProject(int id)
         {
-            using(var scope = _serviceProvider.CreateScope())
+            using (var scope = _serviceProvider.CreateScope())
             {
                 var projectRepository = scope.ServiceProvider.GetRequiredService<IProjectRepository>();
 
                 var project = await projectRepository.GetByIdAsync(id);
 
                 project.Finish();
+
+                await projectRepository.SaveChangesAsync();
             }
         }
     }

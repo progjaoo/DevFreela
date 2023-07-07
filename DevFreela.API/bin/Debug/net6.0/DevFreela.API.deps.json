@@ -18,6 +18,7 @@
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.5",
+          "RabbitMQ.Client": "6.5.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -1647,7 +1648,8 @@
           "DevFreela.Coree": "1.0.0",
           "DevFreela.Infrastructure": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
-          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0"
+          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
+          "RabbitMQ.Client": "6.5.0"
         },
         "runtime": {
           "DevFreela.Application.dll": {}
