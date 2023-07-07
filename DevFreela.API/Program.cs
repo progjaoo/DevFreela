@@ -14,6 +14,7 @@ using DevFreela.Infrastructure.Payments;
 using DevFreela.Coree.Interfaces;
 using DevFreela.Infrastructure.MessageBus;
 using DevFreela.Coree.InterfacesRepositorys;
+using DevFreela.Application.Consumers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -80,14 +82,18 @@ var connection = builder.Configuration.GetConnectionString("DevFreelaCs");
 builder.Services.AddDbContext<DevFreelaDbContext>(p => p.UseSqlServer(connection));
 
 builder.Services.AddHttpClient();
+//MEDIATOR
 builder.Services.AddMediatR(typeof(CreateProjectCommand));
 builder.Services.AddMediatR(typeof(CreateUserCommand));
+//REPOSITORIES
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+//PAYMENTS
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<IMessageBusService, MessageBusService>();
+builder.Services.AddHostedService<PaymentApprovedConsumer>();
 
 
 var app = builder.Build();

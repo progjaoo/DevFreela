@@ -3132,7 +3132,8 @@
           "DevFreela.Coree": "1.0.0",
           "DevFreela.Infrastructure": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
-          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0"
+          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
+          "RabbitMQ.Client": "6.5.0"
         },
         "compile": {
           "bin/placeholder/DevFreela.Application.dll": {}

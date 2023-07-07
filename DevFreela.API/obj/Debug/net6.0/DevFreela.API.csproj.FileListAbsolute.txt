@@ -102,3 +102,5 @@ D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\FluentValidation.D
 D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
 D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\RabbitMQ.Client.dll
+D:\Método.NETDireto\DevFreela\DevFreela.API\bin\Debug\net6.0\System.Threading.Channels.dll
