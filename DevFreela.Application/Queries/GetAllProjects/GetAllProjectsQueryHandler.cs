@@ -16,7 +16,7 @@ namespace DevFreela.Application.Queries.GetAllProjects
         //sempre faz com Metodo ASYNC (AWAIT)
         public async Task<List<ProjectViewModel>> Handle(GetAllProjectsQuery request, CancellationToken cancellationToken)
         {
-            var projects = await _projectrepository.GetAllAsync();
+            var projects = await _projectrepository.GetAllAsync(request.Query);
 
             var projectViewModel = projects
                 .Select(p => new ProjectViewModel(p.Id, p.Title, p.CreatedAt))
