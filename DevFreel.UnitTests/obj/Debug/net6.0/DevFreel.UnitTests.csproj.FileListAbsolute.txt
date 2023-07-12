@@ -161,3 +161,7 @@ D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\obj\Debug\net6.0\ref\DevFreel.
 D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\Castle.Core.dll
 D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\Moq.dll
 D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
+D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\RabbitMQ.Client.dll
+D:\Método.NETDireto\DevFreela\DevFreel.UnitTests\bin\Debug\net6.0\System.Threading.Channels.dll
