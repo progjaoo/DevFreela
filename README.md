@@ -12,7 +12,9 @@
 + Autenticação e Autorização com JWT 
 + Testes Unitários
 + Payments
-+ Mensageria com RabbitMQ (em implementação)
++ Mensageria com RabbitMQ
++ Filtragem e Paginação de dados com EF Core 
++ Unit Of Work (em breve...)
 <p>Breve novidades...</p>
 
 ## Funcionalidades:
