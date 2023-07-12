@@ -45,13 +45,11 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
         public async Task AddASync(Project project)
         {
             await _dbcontext.Projects.AddAsync(project);
-            await _dbcontext.SaveChangesAsync();
         }
 
         public async Task AddCommentAsync(ProjectComment projectcomment)
         {
             await _dbcontext.ProjectComments.AddAsync(projectcomment);
-            await _dbcontext.SaveChangesAsync();
         }
 
         public async Task StartAsync(Project project)

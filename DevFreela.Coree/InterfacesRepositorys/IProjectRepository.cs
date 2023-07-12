@@ -10,7 +10,7 @@ namespace DevFreela.Coree.InterfacesRepositorys
         Task<Project> GetDetailsByIdAsync(int id);
         Task AddASync(Project project);
         Task AddCommentAsync(ProjectComment projectcomment);
-        Task SaveChangesAsync();
         Task StartAsync(Project project);
+        Task SaveChangesAsync();
     }
 }

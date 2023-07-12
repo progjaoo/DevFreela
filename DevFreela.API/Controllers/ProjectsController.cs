@@ -22,7 +22,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "client, freelancer")]
+        //[Authorize(Roles = "client, freelancer")]
         public async Task<IActionResult> Get(GetAllProjectsQuery getAllProjectsQuery)
         {
             var projects = await _mediator.Send(getAllProjectsQuery);
@@ -31,7 +31,7 @@ namespace DevFreela.API.Controllers
         }
         //api/projects/423 ex
         [HttpGet("{id}")]
-        [Authorize(Roles = "client, freelancer")]
+        //[Authorize(Roles = "client, freelancer")]
         public async Task <IActionResult>GetById(int id)
         {
             var query = new GetProjectByIdQuery(id); //escrevendo a query...
@@ -44,7 +44,7 @@ namespace DevFreela.API.Controllers
             return Ok(projects);
         }
         [HttpPost]
-        [Authorize(Roles = "client")]
+        //[Authorize(Roles = "client")]
         public async Task<IActionResult> Post([FromBody] CreateProjectCommand command)
         {
             //var id = _projectService.Create(inputModel);
