@@ -1,4 +1,5 @@
 ﻿using DevFreela.Coree.Entities;
+using DevFreela.Coree.Enums;
 using DevFreela.Coree.InterfacesRepositorys;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
@@ -18,10 +19,18 @@ namespace DevFreela.Application.Commands.CreateProject
         public async Task<int> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
         {
             var project = new Project(request.Title, request.Description, request.IdCliente, request.IdFreelancer, request.TotalCost);
-            
-            await _unitOfWork.Projects.AddASync(project);
+            project.Comments.Add(new ProjectComment("Project was created", project.Id, project.IdCliente));
 
+            //iniciar uma transação
+            await _unitOfWork.BeginTransactionAsync();
+            //cadastra um projeto
+            await _unitOfWork.Projects.AddASync(project);
+            await _unitOfWork.CommitAsync();
+            //cadastra uma skill
+            await _unitOfWork.Skills.AddSkillFromProject(project);      
             await _unitOfWork.CompleteAsync();
+            //aplica as operações
+            await _unitOfWork.CommitAsync();
 
             return project.Id;
         }
