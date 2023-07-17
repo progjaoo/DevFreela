@@ -31,7 +31,6 @@ namespace DevFreela.Infrastructure.Persistence
         {
             try
             {
-                throw new Exception();
                 await _transaction.CommitAsync();
             }
             catch (Exception ex)
