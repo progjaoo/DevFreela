@@ -14,7 +14,7 @@
 + Payments
 + Mensageria com RabbitMQ
 + Filtragem e Paginação de dados com EF Core 
-+ Unit Of Work (em breve...)
++ Unit Of Work
 <p>Breve novidades...</p>
 
 ## Funcionalidades:
