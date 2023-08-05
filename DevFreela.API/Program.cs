@@ -33,6 +33,12 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
 
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(
+    policy => {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -104,6 +110,10 @@ builder.Services.AddHostedService<PaymentApprovedConsumer>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+//COORS PARA UTILIZAR A API
+app.UseCors();
+
 
 app.UseSwagger();
 app.UseSwaggerUI();
